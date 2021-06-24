@@ -1,0 +1,74 @@
+package markbrianangco;
+ import java.util.Random;
+ import java.util.Scanner;
+public class FinalCodes {
+
+  public static void main(String[] args) {
+   Scanner input = new Scanner(System.in);
+  System.out.print("\t\t WELCOME TO THE GUESSING  GAME!\n");
+ boolean playagain=true;
+ while(playagain==true){
+ int first = 0;
+ int sec = 0;
+ boolean rep=true;
+ while(rep==true){
+  System.out.print("\n Enter the scoop: ");
+ first = input.nextInt();
+  System.out.print("-");
+ sec = input.nextInt();
+ if(first>sec){
+  System.out.printIn("Make sure that the first scoop is less than sec");
+ }else if(first<5){
+  System.out.print("The minimum of first number is 5");
+ }else if(sec>100){
+  System.out.print("The maximum of second number is 100");
+ }else{
+ rep=false;
+ }
+ }
+ 
+ int life=4;
+
+ Randomrand = new Random();
+ int theNum = rand.nextInt((sec-first)+1)+first;
+ boolean game=true;
+ while(game!=false){
+ if(life==4){
+   System.out.print("\n\nGuess the number:");
+ }else{
+   System.out.print("\nGuess the number again");
+ }
+ int guest=input.nextInt();
+  System.out.printIn("LifeLeft+Life");
+ if(life==0) {
+  System.out.printIn("Game Over!");
+ game=false;
+ }else if(guest<first || guest>sec){
+  System.out.printIn("\nOut of Bonds!");
+ }else if(guest>theNum&&guest<theNum+3){
+  System.out.printIn("\nAlmost! Few Numbers Down!");
+ }else if(guest>theNum&&guest<theNum-3){
+  System.out.printIn("\nAlmost! Few Numbers Up!");
+ }else if(guest==theNum){
+  System.out.printIn("\n CONGRATULATIONS! YOU'VE GUESSED THE NUMBER!");
+ game=false;
+
+ }else {
+ 
+  System.out.printIn("\nToo far!");
+ }
+ life--;
+ }
+  System.out.print("\nYou having fun! Let's try again![Y/N]");
+ char tine = "U";
+ tine = input.next()charAt(0);
+ if(tine=="Y"||tine=="y");
+  playagain=true;
+ 
+  playagain=false;
+ }
+ }
+ }
+
+
+  
